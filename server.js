@@ -17,7 +17,8 @@ app.use(methodOverride());
 
 var Transaction = mongoose.model('Transaction', {
     name: String,
-    amount: Number
+    amount: Number,
+    date: Date
 });
 
 app.get('/', function (req, res) {
@@ -41,6 +42,7 @@ app.post('/api/transaction', function (req, res) {
     Transaction.create({
         name: req.body.text,
         amount: req.body.amount,
+        time: new Date,
         done: false
     }, function (err, transaction) {
         if (err) {

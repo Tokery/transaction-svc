@@ -1,0 +1,53 @@
+<!-- <form action="/create" method="post">
+    <h1>
+        Create your account
+    </h1>
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username"/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <input type="submit" value="Make my account!"/>
+    </div>
+</form> -->
+
+<!doctype html>
+<html ng-app="loginActivity">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Create your account</title>
+
+        <!-- Load Angular -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+        <script src="newProfile.js"></script>
+    </head>
+
+    <body ng-controller="mainController">
+        <div class="login" ng-hide="new">
+            <h1>
+                Create your account
+            </h1>
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username" ng-model="user.username"/>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password" ng-model="user.password"/>
+            </div>
+            <div>
+                <input type="submit" value="Make my account!" ng-click="createUser(user)"/>
+            </div>
+        </div>
+        <div class="createdAccount" ng-show="new">
+            <h2>
+                Congratulations! {{ user.username }}
+            </h2>
+        </div>
+    </body>
+</html>

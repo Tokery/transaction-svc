@@ -34,14 +34,15 @@
         </div>
 
         <!-- TODO LIST -->
-        <div id="todo-list" class="row">
+        <div id="todo-list" class="list-group">
             <div class="col-sm-4 col-sm-offset-4">
 
                 <!-- LOOP OVER THE TODOS IN $scope.todos -->
                 <div class="checkbox" ng-repeat="todo in transactions">
                     <label>
-                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> $ {{ todo.amount }} {{ todo.name }}
+                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> 
                     </label>
+                    <li class="list-group-item"> $ {{ todo.amount }} {{ todo.name }} </li>
                 </div>
 
             </div>

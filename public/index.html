@@ -30,6 +30,17 @@
 		<div class="col-sm-8 col-sm-offset-2 text-center">
 			<form>
 				<div class="form-group">
+        <!-- TODO LIST -->
+        <div id="todo-list" class="list-group">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <div class="checkbox" ng-repeat="todo in transactions">
+                    <label>
+                        <input type="checkbox" ng-click="deleteTodo(todo._id)"> 
+                    </label>
+                    <li class="list-group-item"> $ {{ todo.amount }} {{ todo.name }} </li>
+                </div>
 
 					<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
 					<input type="text" class="form-control input-lg text-center" placeholder="Enter a transaction name" ng-model="formData.text">
